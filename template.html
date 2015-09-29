@@ -1,0 +1,24 @@
+<div ng-show="!editMode">
+  <ol ng-repeat="note in notes">
+    <li><a href="#" ng-click="openEditor(note.id)">{{note.data[0].title}}</a></li>
+  </ol>
+</div>
+<div class="textarea-wrap" ng-show="editMode">
+  	<div class="row">
+  		<div class="col-md-4">
+  			<h4>For</h4>
+  			<textarea class="editor" id="editor" ng-model="currentNote[0].content" cols="30" rows="10"></textarea>
+  		</div>
+  		<div class="col-md-4">
+  			<h4>Alt. Solution</h4>
+  			<textarea class="editor" id="editor2" ng-model="currentNote[1].content" cols="30" rows="10"></textarea>
+  		</div>
+  		<div class="col-md-4">
+  			<h4>Against</h4>
+  			<textarea class="editor" id="editor3" ng-model="currentNote[2].content" cols="30" rows="10"></textarea>
+  		</div>
+  	</div>
+</div>
+<span ng-show="!editMode"> <a class="btn btn-primary" ng-click="openEditor()">Create a Note</a></span>
+<span ng-show="editMode"> <a class="btn btn-primary" ng-click="saveNote()">Save Note</a></span>
+<span ng-show="editMode"> <a class="btn btn-danger" ng-click="deleteNote()">Delete Note</a></span>
