@@ -8,5 +8,8 @@ linter@1.11.18
 linter-eslint@8.0.0
 react@0.16.1
 
+Theme: One Dark
+Font: Ubuntu Mono
+
 
 apm install `cat packages.list`
